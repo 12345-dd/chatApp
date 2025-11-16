@@ -44,6 +44,12 @@ npm run dev
 
 Frontend runs on http://localhost:5173
 
+## Demo Video 
+
+You can see the Chat App in action in this demo:
+
+https://www.loom.com/share/f9f0db833b794290a9ab7cbfd43ac703
+
 
 
 
