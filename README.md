@@ -21,6 +21,7 @@ A simplified ChatGPT-style web application with a responsive frontend and Node.j
 ### 1. Clone the repository
 
 git clone https://github.com/12345-dd/chatApp
+
 cd chatApp
 
 ### 2. Install Backend Dependencies
