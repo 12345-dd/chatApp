@@ -27,7 +27,9 @@ cd chatApp
 ### 2. Install Backend Dependencies
 
 cd backend 
-npm install 
+
+npm install
+
 node app.js
 
 Backend runs on http://localhost:4000
@@ -35,7 +37,9 @@ Backend runs on http://localhost:4000
 ### 3. Install Frontend Dependencies 
 
 cd frontend 
+
 npm install
+
 npm run dev
 
 Frontend runs on http://localhost:5173
