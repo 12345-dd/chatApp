@@ -12,10 +12,8 @@ export default function App() {
   const newChat = async () => {
     try {
       const { data } = await axios.post("http://localhost:4000/new-session");
-
       setSessionId(data.sessionId);
       setMessages([]);
-
       setSessions((prev) => [...prev, { id: data.sessionId }]);
     } catch (error) {
       console.error("Error creating new chat:", error);
@@ -24,10 +22,8 @@ export default function App() {
 
   const ask = async () => {
     if (!question.trim() || !sessionId) return;
-
     try {
       const { data } = await axios.post(`http://localhost:4000/ask/${sessionId}`,{ question });
-
       setMessages([...messages, data]);
       setQuestion("");
     } catch (error) {
@@ -46,19 +42,21 @@ export default function App() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col md:flex-row h-screen">
       <Sidebar sessions={sessions} newChat={newChat} loadHistory={loadHistory} />
 
-      <div className="flex-1 p-6 overflow-y-auto bg-gray-100 dark:bg-gray-800">
+      <div className="flex-1 relative bg-gray-100 dark:bg-gray-800 flex flex-col overflow-hidden">
         {!sessionId ? (
           <div className="text-center text-gray-600 mt-40 text-xl dark:text-gray-300">
             Click <b>New Chat</b> to start a conversation.
           </div>
         ) : (
           <>
-            <ChatWindow messages={messages} />
+            <div className="flex-1 overflow-y-auto p-4 md:p-6">
+              <ChatWindow messages={messages} />
+            </div>
 
-            <div className="flex gap-2 items-center mt-4">
+            <div className="flex gap-2 p-4 absolute bottom-0 left-0 w-full">
               <input
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
@@ -78,6 +76,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
