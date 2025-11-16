@@ -1,0 +1,16 @@
+{
+  "samples": [
+    {
+      "title": "Top 5 Products",
+      "table": {
+        "columns": ["Product", "Sales", "Revenue"],
+        "rows": [
+          ["Laptop", 120, "$24000"],
+          ["Mouse", 80, "$4000"],
+          ["Keyboard", 50, "$5000"]
+        ]
+      },
+      "description": "Mock Table Generated for Product Table."
+    }
+  ]
+}
